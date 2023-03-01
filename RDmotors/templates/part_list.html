@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <form action="{% url 'search' %}" method="GET">
+                    <fieldset>
+                        <legend>Поиск запчастей</legend>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Категория</label>
+                            <select id="category" class="form-select js-select2" name="category">
+                                <option></option>
+                                {% for part in view.get_category %}
+                                <option value="{{ part.category.id }}">{{ part.category.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="car" class="form-label">Авто</label>
+                            <select id="car" class="js-select2 form-select" name="car">
+                                <option></option>
+                                {% for part in view.get_cars %}
+                                <option value="{{ part.car.name }}">{{ part.car.name }} {{ part.car.model }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="year" class="form-label">Год</label>
+                            <input type="number" id="year" name="year" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="article" class="form-label">Артикул</label>
+                            <input type="text" id="article" class="form-control" name="article">
+                        </div>
+                        <button type="submit" class="btn btn-dark">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        {% for message in messages %}
+        <li class="{{ message.tags }}">
+            {{ message|safe }}
+            <a href="#" class="close">✖</a>
+        </li>
+        {% endfor %}
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for card in partcard_list %}
+                <div class="col">
+                    <div class="card shadow-sm h-100">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <img src="{{ card.image.first.image.url }}" class="img-thumbnail" width="100%"
+                                 alt="photo">
+                        </div>
+                        <div class="card-body border">
+                            <a href="{{ card.get_absolute_url }}">
+                                <h5 class="card-title">{{ card.category.name }}</h5>
+                            </a>
+                            <p class="card-text fst-italic">{{ card.car }} - {{ card.car_year }} г{% if card.fuel %}, <span
+                                    class="text-muted">{{ card.volume }} л, {{ card.fuel }}</span>{% endif %}</p>
+                            <p class="card-text fst-italic">Артикул: {{ card.article }}</p>
+                            <p class="card-text fst-italic">Цена: {{ card.price }} Br</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">{{ card.published_date }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
+
+

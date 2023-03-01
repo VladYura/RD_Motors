@@ -1,5 +1,7 @@
 from django.contrib import admin
+from django.db import models
 from django.utils.safestring import mark_safe
+from django_select2.forms import Select2Widget
 
 from .models import Category, Cars, PartCard, Photo
 
@@ -8,7 +10,6 @@ admin.site.register(Category)
 
 class PhotoInline(admin.TabularInline):
     model = Photo
-    extra = 1
 
     readonly_fields = ('get_image', )
 
@@ -31,6 +32,9 @@ class PartCardAdmin(admin.ModelAdmin):
     inlines = [PhotoInline]
     search_fields = ('category__name', 'car__name', 'car__model', 'article')
     list_filter = ('car__name', )
+    formfield_overrides = {
+        models.ForeignKey: {'widget': Select2Widget},
+    }
 
 
 @admin.register(Photo)
