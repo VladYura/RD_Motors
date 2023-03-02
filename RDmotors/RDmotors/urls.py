@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("select2/", include("django_select2.urls")),
     path('', include('mainapp.urls')),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/v1/', include('api_motors.urls')),
 ]
 
 if settings.DEBUG:

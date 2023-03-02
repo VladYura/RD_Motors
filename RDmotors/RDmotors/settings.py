@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'mainapp',
+    'api_motors',
+    'rest_framework',
     'django_select2',
 ]
 
