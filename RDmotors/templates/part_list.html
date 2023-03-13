@@ -9,11 +9,15 @@
                     <fieldset>
                         <legend>Поиск запчастей</legend>
                         <div class="mb-3">
-                            <label for="category" class="form-label">Категория</label>
+                            <label for="category" class="form-label">Запчасть</label>
                             <select id="category" class="form-select js-select2" name="category">
                                 <option></option>
-                                {% for part in view.get_category %}
-                                <option value="{{ part.category.id }}">{{ part.category.name }}</option>
+                                {% for cat in view.get_category %}
+                                    {% if filter_data.category|add:"0" == cat.id %}
+                                        <option value="{{ cat.id }}" selected>{{ cat.name }}</option>
+                                    {% else %}
+                                        <option value="{{ cat.id }}">{{ cat.name }}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                         </div>
@@ -21,56 +25,93 @@
                             <label for="car" class="form-label">Авто</label>
                             <select id="car" class="js-select2 form-select" name="car">
                                 <option></option>
-                                {% for part in view.get_cars %}
-                                <option value="{{ part.car.name }}">{{ part.car.name }} {{ part.car.model }}</option>
+                                {% for car in view.get_cars %}
+                                    {% if filter_data.car == car.url %}
+                                        <option value="{{ car.url }}" selected>{{ car.name }} {{ car.model }}</option>
+                                    {% else %}
+                                        <option value="{{ car.url }}">{{ car.name }} {{ car.model }}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="year" class="form-label">Год</label>
-                            <input type="number" id="year" name="year" class="form-control">
+                            <input type="number" id="year" name="year" class="form-control text-center" value="{{ filter_data.year }}">
                         </div>
                         <div class="mb-3">
                             <label for="article" class="form-label">Артикул</label>
-                            <input type="text" id="article" class="form-control" name="article">
+                            <input type="text" id="article" class="form-control text-center" name="article" value="{{ filter_data.article }}">
                         </div>
-                        <button type="submit" class="btn btn-dark">Submit</button>
+                        <div class="mb-3">
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="filter" id="cheap" value="cheap"
+                                     {% if filter_data.filter == 'cheap' %}checked{% endif %}>
+                              <label class="form-check-label" for="cheap">Сначала дешёвые</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="filter" id="expensive" value="expensive"
+                                    {% if filter_data.filter == 'expensive' %}checked{% endif %}>
+                              <label class="form-check-label" for="expensive">Сначала дорогие</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Отправить</button>
+                        <a class="btn btn-dark" href="{% url 'home' %}" role="button">Сбросить</a>
                     </fieldset>
                 </form>
             </div>
         </div>
-        {% for message in messages %}
-        <li class="{{ message.tags }}">
-            {{ message|safe }}
-            <a href="#" class="close">✖</a>
-        </li>
-        {% endfor %}
     </section>
 
-    <div class="album py-5 bg-light">
+    <div class="album py-5 bg-dark">
         <div class="container">
+            {% for message in messages %}
+            <div class="alert alert-dark mx-auto col-lg-6 col-md-8 text-center" role="alert">
+                {{ message }}
+                <a class="btn btn-dark" role="button" href="{% url 'home' %}">На главную</a>
+            </div>
+            {% endfor %}
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                {% for card in partcard_list %}
-                <div class="col">
-                    <div class="card shadow-sm h-100">
-                        <div class="d-flex justify-content-center align-items-center h-100">
-                            <img src="{{ card.image.first.image.url }}" class="img-thumbnail" width="100%"
-                                 alt="photo">
-                        </div>
-                        <div class="card-body border">
-                            <a href="{{ card.get_absolute_url }}">
-                                <h5 class="card-title">{{ card.category.name }}</h5>
-                            </a>
-                            <p class="card-text fst-italic">{{ card.car }} - {{ card.car_year }} г{% if card.fuel %}, <span
-                                    class="text-muted">{{ card.volume }} л, {{ card.fuel }}</span>{% endif %}</p>
-                            <p class="card-text fst-italic">Артикул: {{ card.article }}</p>
-                            <p class="card-text fst-italic">Цена: {{ card.price }} Br</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">{{ card.published_date }}</small>
+                {% for card in parts %}
+                    <div class="col">
+                        <div class="card shadow-sm h-100 align-self-start">
+                            <div class="d-flex justify-content-center align-items-center h-100">
+                                <img src="{{ card.image.first.image.url }}" class="img-thumbnail" width="100%"
+                                     alt="photo">
+                            </div>
+                            <div class="card-body border" style="
+                                                                /*max-height: 265px;*/
+                                                                /*display: flex;*/
+                                                                /*flex-direction: column;*/
+                                                                /*justify-content: space-around;*/
+                            ">
+                                <a href="{{ card.get_absolute_url }}" class="link-dark" target="_blank">
+                                    <h5 class="card-title">{{ card.category.name }}</h5>
+                                </a>
+                                <p class="card-text fs-4 fst-italic">
+                                    {{ card.car }} - {{ card.car_year }} г
+                                </p>
+                                <p class="card-text fst-italic">
+                                    {% if card.volume %}
+                                        <span class="text-muted">{{ card.volume }} л, </span>
+                                    {% endif %}
+                                    {% if card.fuel %}
+                                        <span class="text-muted">{{ card.fuel }}, </span>
+                                    {% endif %}
+                                    {% if card.body_type %}
+                                        <span class="text-muted">{{ card.body_type }}, </span>
+                                    {% endif %}
+                                    {% if card.description %}
+                                        <span class="text-muted">{{ card.description }}, </span>
+                                    {% endif %}
+                                </p>
+                                <p class="card-text fst-italic">Артикул: <span class="fw-bold">{{ card.article }}</span></p>
+                                <p class="card-text fst-italic">Цена: <span class="fw-bold text-primary fs-4">{{ card.price }}</span> <span class="fw-bold fs-4">Br</span></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">{{ card.published_date }}</small>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>
@@ -79,5 +120,43 @@
 </main>
 
 {% endblock %}
+
+{% block pagination %}
+{% if is_paginated %}
+    <div class="bg-dark pb-2">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&laquo;</a>
+                </li>
+            {% endif %}
+            {% for page in page_obj.paginator.page_range %}
+                {% if page_obj.number == page %}
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">{{ page }}</a>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&raquo;</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}
+{% endblock pagination %}
 
 

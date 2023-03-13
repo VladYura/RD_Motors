@@ -35,7 +35,9 @@ class Cars(models.Model):
 
 
 class PartCard(models.Model):
-    category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.SET_NULL, null=True,
+                                 related_name='category')
+    description = models.CharField('Дополнительная информация', max_length=1000, blank=True)
     car = models.ForeignKey(Cars, verbose_name='Авто', on_delete=models.SET_NULL, null=True,
                             related_name='car')
     car_year = models.PositiveIntegerField('Год', default=2000,
@@ -52,7 +54,14 @@ class PartCard(models.Model):
         ('5.0', '5.0'), ('5.5', '5.5'), ('6.0', '6.0'),
     )
     volume = models.CharField('Объём', max_length=3, choices=volume_choices, blank=True)
-    description = models.TextField('Дополнительная информация', max_length=5000, blank=True)
+    body_type_choices = (
+        ('Седан', 'Седан'), ('Универсал', 'Универсал'), ('Хэтчбек', 'Хэтчбек'), ('Лифтбек', 'Лифтбек'),
+        ('Лимузин', 'Лимузин'),
+        ('Внедорожник', 'Внедорожник'), ('Кроссовер', 'Кроссовер'), ('Стретч', 'Стретч'), ('Купе', 'Купе'),
+        ('Кабриолет', 'Кабриолет'),
+        ('Родстер', 'Родстер'), ('Тарга', 'Тарга'), ('Пикап', 'Пикап'), ('Фургон', 'Фургон'), ('Минивэн', 'Минивэн')
+    )
+    body_type = models.CharField('Тип кузова', max_length=11, choices=body_type_choices, blank=True)
     article = models.CharField('Артикул', max_length=8, unique=True, default=0)
     published_date = models.DateTimeField('Дата публикации', default=datetime.datetime.now)
     price = models.IntegerField('Цена', blank=True, null=True)

@@ -55,11 +55,21 @@ def load_in_file(name, data):
             file.write(item + '\n')
 
 
+def converter():
+    url = 'https://www.nbrb.by/statistics/rates/ratesdaily.asp'
+    req = requests.get(url=url)
+    soup = BeautifulSoup(req.text, 'lxml')
+    exchange_rate = soup.find('table', class_='currencyTable').find('tbody').find_all('tr')[7].find_all('td')[2].find(
+        'div').text.replace(',', '.')
+    return float(exchange_rate)
+
+
 if __name__ == "__main__":
+    print(converter())
     # !-- Parsing spare parts category --!
-    cars_parts, parts_cat = parser_categories(URL_CATEGORIES)
-    load_in_file('cars_parts', cars_parts)
-    load_in_file('parts_categories', parts_cat)
+    # cars_parts, parts_cat = parser_categories(URL_CATEGORIES)
+    # load_in_file('cars_parts', cars_parts)
+    # load_in_file('parts_categories', parts_cat)
 
     # !-- Parsing car`s names and values (for parsing car`s models) --!
     # cars_names, cars_values = parser_cars(URL_CATEGORIES)

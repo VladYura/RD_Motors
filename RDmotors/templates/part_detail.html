@@ -1,23 +1,60 @@
 {% extends 'base.html' %}
+{% block title %}{{ part.category.name }} {{ part.car.name }} {{ part.car.model }}{% endblock title %}
 
 {% block content %}
 <main>
-    <section class="py-5 text-center container">
+    <section class="py-5 container">
         <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
+            <div class="col-lg-6 col-md-12">
+                <!--Карусель-->
+                <div id="carousel" class="carousel slide border" data-bs-ride="carousel" data-bs-interval="false">
+                    <div class="carousel-indicators">
+                        {% for i in part.image.all %}
+                            <button type="button" data-bs-target="#carousel"
+                                    data-bs-slide-to="{{ forloop.counter0 }}"
+                                    {% if forloop.first %}
+                                        class="active"
+                                        aria-current="true"
+                                    {% endif %}
+                                    aria-label="Slide {{ forloop.counter }}"></button>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner">
+                        {% for image in part.image.all %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <img src="{{ image.image.url }}" class="d-block" alt="Photo">
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
 
+            </div>
+
+            <div class="col-lg-6 col-md-12 border">
+                <h3 class="text-right">{{ part.category.name }} на авто {{ part.car.name }} {{ part.car.model }} {{ part.car_year }}г.</h3>
+                <p></p>
             </div>
         </div>
     </section>
 
-    <div class="album py-5 bg-light">
-        <div class="container">
+<!--    <div class="album py-5 bg-light">-->
+<!--        <div class="container">-->
+<!--            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 border">-->
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-            </div>
-        </div>
-    </div>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
 </main>
 
