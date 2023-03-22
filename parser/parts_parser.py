@@ -42,6 +42,7 @@ output = []
 i = 0
 
 for data in div_data:
+    volume, fuel = '', ''
     h5 = data.find('h5', class_='add-title').find('a').text.split(' к ')
 
     category = h5[0][:-1].strip()
@@ -53,6 +54,9 @@ for data in div_data:
     span_data = data.find('div', class_='add-details').find('span', class_='info-row')
     if len(span_data.find_all('div')) > 1:
         volume_and_fuel = span_data.div.text.strip()
+        if len(volume_and_fuel.split(', ')) == 2:
+            volume = volume_and_fuel.split(', ')[0][:-2]
+            fuel = volume_and_fuel.split(', ')[1]
         description = span_data.div.next_sibling.next_sibling.text.strip()
     else:
         volume_and_fuel = ''
@@ -70,6 +74,16 @@ for data in div_data:
     images = ['https://bamper.by/' + item['src'] for item in image_list]
 
     print(f'{i} item')
+    images_list = []
+    for it, url in enumerate(images):
+        res = requests.get(url)
+
+        if res.status_code == 200:
+            with open(f'photo/image_{i}_{it}.jpg', 'wb') as f:
+                f.write(res.content)
+            images_list.append(f'/home/vlad/Programs/RD_Motors/parser/photo/image_{i}_{it}.jpg')
+        else:
+            print('Ошибка ' + str(res.status_code))
     print('volume = ' + volume_and_fuel.strip())
     print('desc = ' + description.strip())
     print('article = ' + article)
@@ -78,10 +92,13 @@ for data in div_data:
     temp_data = {
         'category': category,
         'car': car,
+        'volume': volume,
+        'fuel': fuel,
         'car_year': int(year),
         'description': description,
         'article': article,
         'price': int(price),
+        'images': images_list,
     }
     output.append(temp_data)
 
@@ -96,4 +113,3 @@ for data in div_data:
     i += 1
 with open('data.json', 'w', encoding='utf-8') as file:
     json.dump(output, file, ensure_ascii=False)
-

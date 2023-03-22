@@ -62,7 +62,7 @@ class PartCard(models.Model):
         ('Родстер', 'Родстер'), ('Тарга', 'Тарга'), ('Пикап', 'Пикап'), ('Фургон', 'Фургон'), ('Минивэн', 'Минивэн')
     )
     body_type = models.CharField('Тип кузова', max_length=11, choices=body_type_choices, blank=True)
-    article = models.CharField('Артикул', max_length=8, unique=True, default=0)
+    article = models.CharField('Артикул', max_length=10, unique=True, default=0)
     published_date = models.DateTimeField('Дата публикации', default=datetime.datetime.now)
     price = models.IntegerField('Цена', blank=True, null=True)
 
@@ -84,13 +84,16 @@ class Photo(models.Model):
     def __str__(self):
         return self.part_card.category.name
 
-    def save(self):
-        super().save()
-        img = Image.open(self.image.path)
+    def save(self, *args, **kwargs):
+        if self.image:
+            super(Photo, self).save(*args, **kwargs)
+            img = Image.open(self.image.path)
 
-        if img.height > 480 or img.width > 640:
-            img.thumbnail((640, 480))
-            img.save(self.image.path)
+            if img.height > 480 or img.width > 640:
+                img.thumbnail((640, 480))
+                img.save(self.image.path)
+        else:
+            super(Photo, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Фото'

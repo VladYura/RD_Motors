@@ -1,8 +1,8 @@
-def open_file_models():
+def update_cars_table():
     output = []
-    with open('D:\proj pyrhon\workProject\parser\data_txt\cars_models.txt', 'r', encoding='utf-8') as models, \
-            open('D:\proj pyrhon\workProject\parser\data_txt\models_values.txt', 'r', encoding='utf-8') as values, \
-            open('D:\proj pyrhon\workProject\parser\data_txt\cars_values.txt', 'r', encoding='utf-8') as car:
+    with open('/home/vlad/Programs/RD_Motors/parser/data_txt/cars_models.txt', 'r', encoding='utf-8') as models, \
+            open('/home/vlad/Programs/RD_Motors/parser/data_txt/models_values.txt', 'r', encoding='utf-8') as values, \
+            open('/home/vlad/Programs/RD_Motors/parser/data_txt/cars_values.txt', 'r', encoding='utf-8') as car:
         lines_1 = models.readlines()
         lines_2 = values.readlines()
         lines_3 = car.readlines()
@@ -15,11 +15,11 @@ def open_file_models():
     return output
 
 
-def open_two_files():
+def create_cars_table():
     output = []
-    with open('D:\proj pyrhon\workProject\parser\data_txt\cars_models.txt', 'r', encoding='utf-8') as models, \
-            open('D:\proj pyrhon\workProject\parser\data_txt\cars_brands.txt', 'r', encoding='utf-8') as car, \
-            open('D:\proj pyrhon\workProject\parser\data_txt\cars_values.txt', 'r', encoding='utf-8') as values:
+    with open('/home/vlad/Programs/RD_Motors/parser/data_txt/cars_models.txt', 'r', encoding='utf-8') as models, \
+            open('/home/vlad/Programs/RD_Motors/parser/data_txt/cars_brands.txt', 'r', encoding='utf-8') as car, \
+            open('/home/vlad/Programs/RD_Motors/parser/data_txt/cars_values.txt', 'r', encoding='utf-8') as values:
         model_data = models.readlines()
         cars_data = car.readlines()
         car_values = values.readlines()
@@ -29,13 +29,11 @@ def open_two_files():
     return output
 
 
-print(open_two_files())
-
-
 def add_cat():
     output = []
-    with open('D:\proj pyrhon\workProject\parser\data_txt\cars_parts.txt', 'r', encoding='utf-8') as cat, \
-            open('D:\proj pyrhon\workProject\parser\data_txt\parts_categories.txt', 'r', encoding='utf-8') as part_cat:
+    with open('/home/vlad/Programs/RD_Motors/parser/data_txt/cars_parts.txt', 'r', encoding='utf-8') as cat, \
+            open('/home/vlad/Programs/RD_Motors/parser/data_txt/parts_categories.txt', 'r',
+                 encoding='utf-8') as part_cat:
         categories = cat.readlines()
         values = part_cat.readlines()
         for i in range(len(categories)):
@@ -43,9 +41,12 @@ def add_cat():
     return output
 
 
+print(add_cat())
+
+
 def add_cars_values():
     output = []
-    with open('D:\proj pyrhon\workProject\parser\data_txt\cars_values.txt', 'r', encoding='utf-8') as f:
+    with open('/home/vlad/Programs/RD_Motors/parser/data_txt/cars_values.txt', 'r', encoding='utf-8') as f:
         lines = f.readlines()
         for i in lines:
             output.append(i)
