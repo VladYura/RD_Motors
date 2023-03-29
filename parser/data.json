@@ -1,0 +1,313 @@
+[
+  {
+    "category": "Стабилизатор подвески (поперечной устойчивости) задний",
+    "car": "Mazda Premacy",
+    "volume": "",
+    "fuel": "",
+    "car_year": 2004,
+    "description": "Из Европы гарантия состояние как на фота",
+    "article": "31265744",
+    "price": 112,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_0_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_0_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_0_2.jpg"
+    ]
+  },
+  {
+    "category": "Балка подвески задняя",
+    "car": "Toyota Avensis",
+    "volume": "",
+    "fuel": "",
+    "car_year": 1999,
+    "description": "Из Европы гарантия состояние как на фота",
+    "article": "44297296",
+    "price": 308,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_1_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_1_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_1_2.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_1_3.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_1_4.jpg"
+    ]
+  },
+  {
+    "category": "Балка подвески передняя (подрамник)",
+    "car": "Peugeot 806",
+    "volume": "2.1",
+    "fuel": "дизель",
+    "car_year": 1999,
+    "description": "2.1 л, дизель, Из Европы гарантия состояние на фота",
+    "article": "43598161",
+    "price": 896,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_2_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_2_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_2_2.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_2_3.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_2_4.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_2_5.jpg"
+    ]
+  },
+  {
+    "category": "Передняя панель крепления облицовки (телевизор)",
+    "car": "Honda Civic",
+    "volume": "",
+    "fuel": "",
+    "car_year": 1996,
+    "description": "хэтчбек, Из Европы гарантия состояние на фота",
+    "article": "75481565",
+    "price": 364,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_3_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_3_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_3_2.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_3_3.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_3_4.jpg"
+    ]
+  },
+  {
+    "category": "Передняя панель крепления облицовки (телевизор)",
+    "car": "Nissan Almera Tino",
+    "volume": "",
+    "fuel": "",
+    "car_year": 2003,
+    "description": "Из Европы гарантия состояние на фота",
+    "article": "75481964",
+    "price": 364,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_4_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_4_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_4_2.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_4_3.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_4_4.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_4_5.jpg"
+    ]
+  },
+  {
+    "category": "Передняя панель крепления облицовки (телевизор)",
+    "car": "Nissan Almera Tino",
+    "volume": "",
+    "fuel": "",
+    "car_year": 2002,
+    "description": "Из Европы гарантия состояние на фота",
+    "article": "75491891",
+    "price": 392,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_5_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_5_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_5_2.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_5_3.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_5_4.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_5_5.jpg"
+    ]
+  },
+  {
+    "category": "Усилитель бампера переднего",
+    "car": "Nissan Almera Tino",
+    "volume": "",
+    "fuel": "",
+    "car_year": 2002,
+    "description": "Из Европы гарантия",
+    "article": "75481558",
+    "price": 70,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_6_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_6_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_6_2.jpg"
+    ]
+  },
+  {
+    "category": "Трубка гидроусилителя",
+    "car": "Nissan Almera Tino",
+    "volume": "2.2",
+    "fuel": "дизель",
+    "car_year": 2002,
+    "description": "2.2 л, дизель, Из Европы гарантия состояние как на фота",
+    "article": "75481104",
+    "price": 28,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_7_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_7_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_7_2.jpg"
+    ]
+  },
+  {
+    "category": "Трубка кондиционера",
+    "car": "Nissan Almera Tino",
+    "volume": "2.2",
+    "fuel": "дизель",
+    "car_year": 2002,
+    "description": "2.2 л, дизель, Из Европы гарантия",
+    "article": "44908509",
+    "price": 42,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_8_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_8_1.jpg"
+    ]
+  },
+  {
+    "category": "Замок капота",
+    "car": "Nissan Almera Tino",
+    "volume": "2.2",
+    "fuel": "дизель",
+    "car_year": 2002,
+    "description": "2.2 л, дизель, Из Европы гарантия",
+    "article": "75481957",
+    "price": 28,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_9_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_9_1.jpg"
+    ]
+  },
+  {
+    "category": "Патрубок радиатора",
+    "car": "Nissan Almera Tino",
+    "volume": "2.2",
+    "fuel": "дизель",
+    "car_year": 2002,
+    "description": "2.2 л, дизель, Из Европы гарантия",
+    "article": "75491261",
+    "price": 42,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_10_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_10_1.jpg"
+    ]
+  },
+  {
+    "category": "Датчик температуры",
+    "car": "Nissan Almera Tino",
+    "volume": "2.2",
+    "fuel": "дизель",
+    "car_year": 2002,
+    "description": "2.2 л, дизель, Из Европы гарантия",
+    "article": "106806356",
+    "price": 28,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_11_0.jpg"
+    ]
+  },
+  {
+    "category": "Радиатор (основной)",
+    "car": "Nissan Almera Tino",
+    "volume": "2.2",
+    "fuel": "дизель",
+    "car_year": 2002,
+    "description": "2.2 л, дизель, Из Европы гарантия в сборе состояние как на фота",
+    "article": "75481705",
+    "price": 168,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_12_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_12_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_12_2.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_12_3.jpg"
+    ]
+  },
+  {
+    "category": "Диффузор вентилятора",
+    "car": "Peugeot 607",
+    "volume": "2.2",
+    "fuel": "бензин",
+    "car_year": 2002,
+    "description": "2.2 л, бензин, Из Европы гарантия в сборе",
+    "article": "16694539",
+    "price": 168,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_13_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_13_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_13_2.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_13_3.jpg"
+    ]
+  },
+  {
+    "category": "Радиатор кондиционера",
+    "car": "Peugeot 607",
+    "volume": "2.2",
+    "fuel": "бензин",
+    "car_year": 2002,
+    "description": "2.2 л, бензин, Из Европы гарантия",
+    "article": "44908883",
+    "price": 98,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_14_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_14_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_14_2.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_14_3.jpg"
+    ]
+  },
+  {
+    "category": "Радиатор (основной)",
+    "car": "Citroen C5",
+    "volume": "2.0",
+    "fuel": "дизель",
+    "car_year": 2002,
+    "description": "2.0 л, дизель, Из Европы гарантия",
+    "article": "44908261",
+    "price": 98,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_15_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_15_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_15_2.jpg"
+    ]
+  },
+  {
+    "category": "Диффузор вентилятора",
+    "car": "Citroen C5",
+    "volume": "2.0",
+    "fuel": "дизель",
+    "car_year": 2002,
+    "description": "2.0 л, дизель, Из Европы гарантия",
+    "article": "75481662",
+    "price": 168,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_16_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_16_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_16_2.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_16_3.jpg"
+    ]
+  },
+  {
+    "category": "Радиатор кондиционера",
+    "car": "Citroen C5",
+    "volume": "2.0",
+    "fuel": "дизель",
+    "car_year": 2002,
+    "description": "2.0 л, дизель, Из Европы гарантия",
+    "article": "44908620",
+    "price": 70,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_17_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_17_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_17_2.jpg"
+    ]
+  },
+  {
+    "category": "Трубка гидроусилителя",
+    "car": "Peugeot 607",
+    "volume": "",
+    "fuel": "",
+    "car_year": 2002,
+    "description": "Из Европы гарантия",
+    "article": "43598841",
+    "price": 70,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_18_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_18_1.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_18_2.jpg"
+    ]
+  },
+  {
+    "category": "Замок капота",
+    "car": "Peugeot 607",
+    "volume": "",
+    "fuel": "",
+    "car_year": 2002,
+    "description": "Из Европы гарантия",
+    "article": "44908136",
+    "price": 28,
+    "images": [
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_19_0.jpg",
+      "/home/vlad/Programs/RD_Motors/parser/photo/image_19_1.jpg"
+    ]
+  }
+]

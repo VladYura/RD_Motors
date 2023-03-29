@@ -1,10 +1,10 @@
 import json
 from django.utils import timezone
 from mainapp.models import PartCard, Cars, Category, Photo
-with open('/home/vlad/Programs/RD_Motors/parser/data.json', 'r', encoding='utf-8') as file:
+with open('/RD_Motors/parser/data.json', 'r', encoding='utf-8') as file:
     data = json.load(file)
 
-iter = 20
+iter = 0
 for dct in data:
     category = Category.objects.get(name=dct['category'] + '\n')
     model = ' '.join(dct['car'].split(' ')[1:])
