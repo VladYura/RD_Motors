@@ -12,12 +12,13 @@ services:
 
   db:
     image: postgres:12.14-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=maindb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ./db_data:/docker-entrypoint-initdb.d
 
 volumes:
   postgres_data:

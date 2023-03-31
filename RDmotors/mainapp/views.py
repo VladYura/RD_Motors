@@ -47,7 +47,6 @@ class SearchList(ListView, CategoryAndCars):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['filter_data'] = self.request.GET
-        print(context)
         return context
 
     def get_queryset(self):
